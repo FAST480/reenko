@@ -1,0 +1,153 @@
+@media(min-width: 2224px)
+{
+	.red-square-half{
+		left: -80%;
+	}
+}
+
+@media(max-width: 1156px)
+{
+	.header__menu li{
+		padding-left: 0;
+		&:before{
+			display: none;
+		}
+	}
+}
+@media(max-width: 915px)
+{
+	.nav__burger{
+		display: block;
+		position: relative;
+		width: 30px;
+		height: 20px;
+		z-index: 2;
+		span{
+			position: absolute;
+			width: 65%;
+			height: 2px;
+			right: 0;
+			top: 9px;
+			background-color: #fff;
+			transition: .5s;
+		}
+		&:before,
+		&:after{
+			content: '';
+			position: absolute;
+			background-color: #fff;
+			height: 2px;
+			right: 0;
+		}
+		&:before{
+			width: 100%;
+			top: 0;
+			transition:  transform .5s ease-in-out , top .5s ease-in-out .5s ;
+		}
+		&:after{
+			width: 30%;
+			bottom: 0;
+			transition: width .5s ease-in-out ,transform .5s ease-in-out , bottom .5s ease-in-out .5s ;
+		}
+	}
+	.nav__burger.active{
+		span{
+			transform: scale(0);
+		}
+		&:before{
+			transform: rotate(45deg);
+			top: 9px;
+			transition: top .3s ease-in-out , transform .3s ease-in-out .3s;
+			width: 100%;
+		}
+		&:after{
+			width: 100%;
+			transform: rotate(-45deg);
+			bottom: 9px;
+			transition: bottom .3s ease-in-out , transform .3s ease-in-out .3s, width .5s ease-in-out;
+		}
+	}
+	.nav__menu{
+		position: fixed;
+		overflow: auto;
+		display: block;
+		top: 0;
+		right: -500px;
+		width: 400px;
+		height: 100%;
+		overscroll-behavior: contain;
+		transition: .5s ease-in-out;
+		padding: 10vh 5vw;
+		background-color: rgb(177,13,32);
+		z-index: 1;
+		li{
+			margin: 25px 0;
+			padding-left: 50px;
+			&:before{
+				display: block;
+			}
+
+			a{
+				display: inline-block;
+				text-transform: uppercase;
+				font-size: 21px;
+				color: #fff;
+				padding: 5px 0;
+			}
+		}
+	}
+	.nav__menu.active{
+		right: 0;
+	}
+	.header__menu--main:before,
+	.header__menu--how:before,
+	.header__menu--forum:before,
+	.header__menu--news:before,
+	.header__menu--account:before{
+		top: 0;
+		bottom: 0;
+	}
+}
+
+@media(max-width: 688px)
+{
+	.container{
+		max-width: 1190px;
+		padding: 0 10px;
+	}
+	.main__title{
+		font-size: 24px;
+	}
+	.main__item{
+		font-size: 16px;
+	}
+	.main__buttons a{
+		font-size: 12px;
+	}
+	.footer__body{
+		font-size: 12px;
+	}
+}
+
+@media(max-width: 585px)
+{
+	.nav__menu{
+		width: 60%;
+		right: -100%;
+	}
+}
+@media(max-width: 500px)
+{
+	.popup__content{
+		width: 100%;
+	}
+}
+@media(max-width: 425px)
+{
+	.main{
+		margin-top: 5vh;
+	}
+	.nav__menu{
+		width: 100%;
+	}
+}
